@@ -1,40 +1,23 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {observable} from 'mobx';
-import {observer} from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
+import {Provider} from 'mobx-react';
 
-class AppState {
-    @observable timer = 0;
+import appStore from '../src/AppStore';
+import {CategoryListView} from './category/CategoryListView'
+import {PurchaseListView} from './purchase-list/PurchaseListView'
 
-    constructor() {
-        setInterval(() => {
-            this.timer += 1;
-        }, 1000);
-    }
+export class App extends React.Component<any, any> {
 
-    resetTimer() {
-        this.timer = 0;
+    render() {
+        return (
+                <Provider appStore = { appStore } >
+                    <div>
+                        <CategoryListView />
+                        <PurchaseListView />
+                    </div>
+                </Provider>
+        )
     }
 }
 
-@observer
-class TimerView extends React.Component<{appState: AppState}, {}> {
-    render() {
-        return (
-            <div>
-                <button onClick={this.onReset}>
-                    Seconds passed: {this.props.appState.timer}
-                </button>
-                <DevTools />
-            </div>
-        );
-     }
-
-     onReset = () => {
-         this.props.appState.resetTimer();
-     }
-};
-
-const appState = new AppState();
-ReactDOM.render(<TimerView appState={appState} />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

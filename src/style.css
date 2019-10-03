@@ -1,0 +1,85 @@
+html, body {
+}
+
+ul, li{
+    margin: 0;
+    padding: 5px 10px;
+    list-style: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.category {
+    float: left;
+    margin-right: 50px;
+    margin-left: 20px;
+}
+
+.category-list {
+    padding-bottom: 10px;
+}
+
+.category-list__item {
+}
+
+.category-list__item:hover {
+    background-color: #ffd9b3;
+}
+
+.btn {
+    padding: 3px 6px;
+    
+}
+
+.category__add-btn {
+    margin-top: 20px;
+    border: 1px solid olive;
+}
+
+.goods {
+    padding: 10px;
+}
+
+.goods-list {
+
+}
+
+.goods__add-btn {
+    margin-top: 5px;
+    background-color: gray;
+    color: #fff;
+}
+
+.purchase {
+    margin-top: 20px;
+}
+
+.purchase-list td,
+.goods-list td {
+    padding: 5px 10px;
+    border: 0;
+}
+
+.goods-list thead {
+    background-color: grey;
+    color: #fff;
+}
+
+.purchase-list tr:hover {
+    background-color: olive;
+    color: white;
+}
+
+.purchase__sum {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
